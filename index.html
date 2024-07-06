@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naved's Portfolio Desktop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg">
+    <div id="desktop">
+        <div class="taskbar">
+            <div class="models">
+                <button class="btn">
+                    <button id="startButton" class="btn">
+                        <span class="description">Start</span>
+                    </button>                    
+                </button>
+            </div>
+        </div>
+        <div class="icon" data-project="2DFluidSolver">
+            <img src="Fluid.png" />
+            <span style="color: aliceblue;"><b>2D Fluid Sim</b></span>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="icon" data-project="Pendulumsketch">
+            <img src="pendulum.png" />
+            <span style="color: aliceblue;"><b>Chaos theory visualization</b></span>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="icon" data-project="MusicVisualizer">
+            <img src="audio.png" />
+            <span style="color: aliceblue;"><b>Audio Visualization</b></span>
+        </div>
+        <div id="musicPlayer" class="musicPlayer">
+            <header>Music</header>
+            <p id="currentSongTitle">Current Song Title</p>
+            <div id="playerControls">
+                <button id="prevBtn"></button>
+                <button id="playPauseBtn"></button>
+                <button id="nextBtn"></button>
+                <input type="range" id="volumeSlider" min="0" max="50" value="10">
+            </div>
+            <ul id="songList">
+                <li class="song-item" data-src="songs/crush.mp3">Crush</li>
+                <li class="song-item" data-src="songs/fakelovedontlast.mp3">Fake love don't last</li>
+                <li class="song-item" data-src="songs/SHAKEWEIGHT.mp3">SHAKEWEIGHT</li>
+                <li class="song-item" data-src="songs/IWannaGoHome.mp3">I wanna go home</li>
+                <li class="song-item" data-src="songs/KanyeLoveYourself.mp3">Love yourself</li>
+                <li class="song-item" data-src="songs/Nandemonaiya.mp3">Nandemonaiya</li>
+                <li class="song-item" data-src="songs/Atlantis.mp3">Atlantis</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

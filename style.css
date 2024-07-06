@@ -1,0 +1,269 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+ .bg {
+    background-image: url("desktopBackground.jpg");
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#desktop {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  cursor: pointer;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #9b2525;
+    display: flex;
+    align-items: center;
+    top:887px;
+}
+
+.description {
+  position: relative;
+  display: block;
+  z-index: 3;
+  color: var(--white);
+}
+
+
+.models {
+  
+  width: 0%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  
+  .btn {
+    background-color: #333; /* Initial background color */
+    border: none;
+    padding: 10px 20px;
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+    }
+      
+    &:before {
+
+      background: var(--secondary-blue);
+      transition: 0.6s ease-in;
+      transition-delay: .1s;
+    }
+
+    &:after {
+
+      background: var(--tertiary-blue);
+      transition: 0.8s ease;
+      transition-delay: .4s;
+    }
+
+    &:hover {
+
+      &:before, &:after {
+
+        transform: translate(-50%, -50%) scale(310);
+      }
+    }
+  }  
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* This is necessary for dragging */
+  cursor: pointer;
+  z-index: 1;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
+}
+
+.icon span {
+  color: black;
+  position: absolute;
+  top: 100px; 
+  font-size: larger;
+  text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.musicPlayer {
+  width: 300px;
+  background-color: rgb(19, 19, 24);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.musicPlayer header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#songWallpapper {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+
+#currentSongTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+#playerControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#playerControls button {
+  background-color: #1a1a1a;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#playPauseBtn:before {
+  content: '▶';
+}
+
+#musicPlayerContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+
+#prevBtn:before {
+  content: '◀';
+}
+
+#nextBtn:before {
+  content: '▶';
+}
+
+#volumeSlider {
+  transform: rotate(-90deg);
+  width: 100px;
+  position: absolute;
+  top: 100px;
+  right: -40px;
+}
+
+#songList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 150px;
+  overflow-y: auto;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+}
+
+#songList li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #2a2a2a;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#songList li:hover {
+  background-color: #3a3a3a;
+}
