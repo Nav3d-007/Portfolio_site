@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
     const currentSongTitle = document.getElementById('currentSongTitle');
     const volumeSlider = document.getElementById('volumeSlider');
+    const startButton = $('#startButton');
+    const startMenu = $('#startMenu');
+    const closeModal = document.querySelector('.close');
+
     const audioPlayer = new Howl({
         src: [''],
         autoplay: false,
@@ -17,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playNextSong();
         }
     });
+
     let isDragging = false;
     let currentIcon = null;
     let currentSongIndex = 0;
@@ -107,8 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         audioPlayer.volume(e.target.value / 10);
     });
 
-
-
     songListItems.forEach((songItem, index) => {
         songItem.addEventListener('click', () => {
             currentSongIndex = index;
@@ -154,14 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    
-
     closeModal.addEventListener('click', () => {
         modal.classList.add('hidden');
         modalBody.innerHTML = '';
     });
 
-   
     function openModal(project) {
         switch (project) {
             case '2DFluidSolver':
@@ -176,12 +176,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.html(`<iframe  width="450" height="480" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
                 modal.find('.modal-title').text('Audio visualization');
                 break; 
-            
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
         modal.modal('show');
     }
 
-});
+    // Start Menu Logic
+    startButton.on('click', function() {
+        startMenu.toggle();
+    });
 
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('#startButton, #startMenu').length) {
+            startMenu.hide();
+        }
+    });
+
+    $('.start-menu-item').on('click', function() {
+        const project = $(this).data('project');
+        openModal(project);
+        startMenu.hide();
+    });
+
+    document.querySelectorAll('.start-menu-item').forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+            const description = e.currentTarget.querySelector('.start-menu-description');
+            description.style.display = 'block';
+        });
+    
+        item.addEventListener('mouseout', (e) => {
+            const description = e.currentTarget.querySelector('.start-menu-description');
+            description.style.display = 'none';
+        });
+    
+        item.addEventListener('click', () => {
+            const project = item.getAttribute('data-project');
+            openModal(project);
+        });
+    });
+    
+
+});

@@ -1,20 +1,19 @@
-body,html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
- .bg {
-    background-image: url("desktopBackground.jpg");
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.bg {
+  background-image: url("desktopBackground.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 #desktop {
   position: relative;
@@ -26,44 +25,42 @@ body,html {
 }
 
 .taskbar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background: #9b2525;
-    display: flex;
-    align-items: center;
-    top:887px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #9b2525;
+  display: flex;
+  align-items: center;
+  top: 887px;
 }
 
 .description {
   position: relative;
   display: block;
   z-index: 3;
-  color: var(--white);
+  color: var(--black);
 }
 
-
 .models {
-  
   width: 0%;
   height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--primary);
-  
-  .btn {
-    background-color: #333; /* Initial background color */
-    border: none;
-    padding: 10px 20px;
-    color: var(--white);
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    transition: background-color 0.3s ease;
-    
-    &:before, &:after {
+}
+
+.btn {
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  &:before, &:after {
       content: '';
       position: absolute;
       height: 10px;
@@ -72,37 +69,29 @@ body,html {
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
       border-radius: 50%;
-    }
-      
-    &:before {
-
+  }
+  &:before {
       background: var(--secondary-blue);
       transition: 0.6s ease-in;
       transition-delay: .1s;
-    }
-
-    &:after {
-
+  }
+  &:after {
       background: var(--tertiary-blue);
       transition: 0.8s ease;
       transition-delay: .4s;
-    }
-
-    &:hover {
-
+  }
+  &:hover {
       &:before, &:after {
-
-        transform: translate(-50%, -50%) scale(310);
+          transform: translate(-50%, -50%) scale(310);
       }
-    }
-  }  
+  }
 }
 
 .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute; /* This is necessary for dragging */
+  position: absolute;
   cursor: pointer;
   z-index: 1;
 }
@@ -115,51 +104,50 @@ body,html {
 .icon span {
   color: black;
   position: absolute;
-  top: 100px; 
+  top: 100px;
   font-size: larger;
   text-align: center;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
 
 .modal-content {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-  .close:hover,
+.close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-
 .musicPlayer {
   width: 300px;
-  background-color: rgb(19, 19, 24);
+  background-color: rgb(255, 255, 255);
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -184,12 +172,10 @@ body,html {
   margin: 0 auto 10px;
 }
 
-
 #currentSongTitle {
   text-align: center;
   margin-bottom: 10px;
 }
-
 
 #playerControls {
   display: flex;
@@ -225,9 +211,8 @@ body,html {
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
 }
-
 
 #prevBtn:before {
   content: '◀';
@@ -267,3 +252,67 @@ body,html {
 #songList li:hover {
   background-color: #3a3a3a;
 }
+
+/* Start Menu Styling */
+.start-menu {
+  display: none;
+  position: absolute;
+  bottom: -500px;
+  left: 10px;
+  width: 200px;
+  background-color: rgba(153, 128, 128, 0.9);
+  border: 1px solid #cc6363;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.start-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.start-menu-item {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.start-menu-item:after {
+  content: '>';
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.start-menu-item:hover {
+  background-color: #8a8080;
+}
+
+.start-menu-description {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 200px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.start-menu-item:hover .start-menu-description {
+  display: block;
+}
+

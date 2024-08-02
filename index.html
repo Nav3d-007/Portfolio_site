@@ -11,30 +11,32 @@
     <div id="desktop">
         <div class="taskbar">
             <div class="models">
-                <button class="btn">
-                    <button id="startButton" class="btn">
-                        <span class="description">Start</span>
-                    </button>                    
+                <button style="margin-left:50px; ;" id="startButton">
+                    <span class="description">Start</span>
                 </button>
             </div>
         </div>
+
+        <!-- Icons -->
         <div class="icon" data-project="2DFluidSolver">
-            <img src="Fluid.png" />
-            <span style="color: aliceblue;"><b>2D Fluid Sim</b></span>
+            <img src="Fluid.png" alt="2D Fluid Solver Icon" />
+            <span style="color: aliceblue;"><b>2D Fluid Solver</b></span>
         </div>
         <br><br><br><br><br><br><br><br>
         <div class="icon" data-project="Pendulumsketch">
-            <img src="pendulum.png" />
-            <span style="color: aliceblue;"><b>Chaos theory visualization</b></span>
+            <img src="pendulum.png" alt="Brownian motion visualization Icon" />
+            <span style="color: aliceblue;"><b>Brownian motion visualization</b></span>
         </div>
         <br><br><br><br><br><br><br><br>
         <div class="icon" data-project="MusicVisualizer">
-            <img src="audio.png" />
+            <img src="audio.png" alt="Audio Visualization Icon" />
             <span style="color: aliceblue;"><b>Audio Visualization</b></span>
         </div>
+
+        <!-- Music Player -->
         <div id="musicPlayer" class="musicPlayer">
             <header>Music</header>
-            <p id="currentSongTitle">Current Song Title</p>
+            <p style="color: rgb(17, 34, 34); font-weight: bold;" id="currentSongTitle">Current Song Title</p>
             <div id="playerControls">
                 <button id="prevBtn"></button>
                 <button id="playPauseBtn"></button>
@@ -49,24 +51,51 @@
                 <li class="song-item" data-src="KanyeLoveYourself.mp3">Love yourself</li>
                 <li class="song-item" data-src="Nandemonaiya.mp3">Nandemonaiya</li>
                 <li class="song-item" data-src="Atlantis.mp3">Atlantis</li>
-
             </ul>
         </div>
-    </div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+
+        <!-- Project Information Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody"></div>
                 </div>
-                <div class="modal-body" id="modalBody"></div>
             </div>
         </div>
+
+        <!-- Start Menu -->
+        <div id="startMenu" class="start-menu">
+            <ul>
+                <li class="start-menu-item" data-project="2DFluidSolver">
+                    2D Fluid Solver
+                    <div class="start-menu-description">
+                        A 2D fluid simulation using gridbased representation and navior stocks equations using C++ and SFML.
+                    </div>
+                </li>
+                <li class="start-menu-item" data-project="Pendulumsketch">
+                    Brownian Motion Visualization
+                    <div class="start-menu-description">
+                        Visualizes Brownian motion using p5.js.
+                    </div>
+                </li>
+                <li class="start-menu-item" data-project="MusicVisualizer">
+                    Audio Visualization
+                    <div class="start-menu-description">
+                        Real-time audio visualization using p5.js.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
+    <!-- JavaScript Libraries and Custom Script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
