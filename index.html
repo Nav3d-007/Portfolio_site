@@ -9,38 +9,34 @@
 </head>
 <body class="bg">
     <div id="desktop">
-        <!-- Main Content Area -->
-        <div class="main-content">
-            <!-- Icons -->
-            <div class="icon" data-project="2DFluidSolver" style="top: 100px; left: 50px;">
-                <img src="Fluid.png" alt="2D Fluid Solver Icon" />
-                <span><b>2D Fluid Solver</b></span>
-            </div>
-
-            <div class="icon" data-project="Pendulumsketch" style="top: 100px; left: 200px;">
-                <img src="pendulum.png" alt="Brownian motion visualization Icon" />
-                <span><b>Brownian motion visualization</b></span>
-            </div>
-
-            <div class="icon" data-project="MusicVisualizer" style="top: 100px; left: 350px;">
-                <img src="audio.png" alt="Audio Visualization Icon" />
-                <span><b>Audio Visualization</b></span>
-            </div>
-        </div>
-
-        <!-- Taskbar -->
         <div class="taskbar">
             <div class="models">
-                <button id="startButton" class="btn">
+                <button style="margin-left:50px; ;" id="startButton">
                     <span class="description">Start</span>
                 </button>
             </div>
         </div>
 
+        <!-- Icons -->
+        <div class="icon" data-project="2DFluidSolver">
+            <img src="Fluid.png" alt="2D Fluid Solver Icon" />
+            <span style="color: aliceblue;"><b>2D Fluid Solver</b></span>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="icon" data-project="Pendulumsketch">
+            <img src="pendulum.png" alt="Brownian motion visualization Icon" />
+            <span style="color: aliceblue;"><b>Brownian motion visualization</b></span>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="icon" data-project="MusicVisualizer">
+            <img src="audio.png" alt="Audio Visualization Icon" />
+            <span style="color: aliceblue;"><b>Audio Visualization</b></span>
+        </div>
+
         <!-- Music Player -->
         <div id="musicPlayer" class="musicPlayer">
             <header>Music</header>
-            <p id="currentSongTitle">Current Song Title</p>
+            <p style="color: rgb(17, 34, 34); font-weight: bold;" id="currentSongTitle">Current Song Title</p>
             <div id="playerControls">
                 <button id="prevBtn"></button>
                 <button id="playPauseBtn"></button>
@@ -79,7 +75,7 @@
                 <li class="start-menu-item" data-project="2DFluidSolver">
                     2D Fluid Solver
                     <div class="start-menu-description">
-                        A 2D fluid simulation using grid-based representation and Navier-Stokes equations using C++ and SFML.
+                        A 2D fluid simulation using gridbased representation and navior stocks equations using C++ and SFML.
                     </div>
                 </li>
                 <li class="start-menu-item" data-project="Pendulumsketch">
@@ -96,6 +92,7 @@
                 </li>
             </ul>
         </div>
+
     </div>
 
     <!-- JavaScript Libraries and Custom Script -->
