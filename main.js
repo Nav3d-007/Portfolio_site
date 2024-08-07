@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const icons = document.querySelectorAll('.icon');
     const modal = $('#projectModal');
     const modalBody = $('#modalBody');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volumeSlider');
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
-    const closeModal = document.querySelector('.close');
 
     const audioPlayer = new Howl({
         src: [''],
@@ -157,11 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        modalBody.innerHTML = '';
-    });
-
     function openModal(project) {
         switch (project) {
             case '2DFluidSolver':
@@ -215,6 +208,4 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal(project);
         });
     });
-    
-
 });
