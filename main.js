@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break; 
             case 'OrbitalGravitySimulation':
                 modal.find('.modal-title').text('Orbital Gravity Simulation')
-                content = `<p>Simulates orbital dynamics using vector algebra. pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
+                let content = `<p>Simulates orbital dynamics using vector algebra. pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
                             <img src="gravityDemo1.gif" alt="Orbital Gravity Simulation GIF 1" style="width:100%; height:auto;"/>
                             <img src="gravity2SourcesSmall.gif" alt="Orbital Gravity Simulation GIF 2" style="width:100%; height:auto;"/>
                             `;
