@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volumeSlider');
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
+    alert("Pleae double click the icons to see result");
+
 
     const audioPlayer = new Howl({
         src: [''],
