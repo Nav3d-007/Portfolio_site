@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.find('.modal-title').text('Double Pendulum (Randomized parameters per launch)');
                 break; 
             case 'MusicVisualizer':
-                modalBody.html(`<iframe  width="450" height="480" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
+                modalBody.html(`<iframe  width="800" height="800" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
                 modal.find('.modal-title').text('Audio visualization');
                 break; 
             case 'OrbitalGravitySimulation':
