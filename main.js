@@ -186,7 +186,7 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software d
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2022 – April 2023</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
-    <p><strong>Technologies:</strong> Dot Net Core, .NET MVC, C#, SQL Server, HTML, CSS, Git, Azure DevOps, AngularJS, JavaScript, Stored Procedures</p>
+    <p><strong>Technologies:</strong> Dot Net Core, .NET MVC, jQuery, C#, SQL Server, HTML, CSS, Git, Azure DevOps, AngularJS, JavaScript, Stored Procedures</p>
     <p><strong>Description:</strong> This is an online portal where different countries submit their country risks, responses, and actions, which are analyzed to take appropriate actions to avoid these risks.</p>
     <ul>
         <li>Implemented new requirements for the tool. Designed User Interface using HTML5, CSS, JavaScript, jQuery, and AngularJS.</li>
@@ -201,7 +201,7 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software d
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2023 – January 2024</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
-    <p><strong>Technologies:</strong> Dot Net Core Web API, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
+    <p><strong>Technologies:</strong> Dot Net Core Web API, jQuery, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
     <p><strong>Description:</strong> This is a medical platform for doctors and medical professionals to maintain, update, and create records of migrants who have crossed international borders.</p>
     <ul>
         <li>Developed complete features from design to code and testing through Angular 15 UI and .NET Core 7.</li>
