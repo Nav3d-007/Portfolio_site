@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const startMenu = $('#startMenu');
     alert("Pleae double click the icons to see result");
 
-
     const audioPlayer = new Howl({
         src: [''],
         autoplay: false,
@@ -173,12 +172,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 break; 
             case 'OrbitalGravitySimulation':
                 modal.find('.modal-title').text('Orbital Gravity Simulation')
-                let content = `<p>Simulates orbital dynamics using vector algebra. pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
+                var content = `<p>Simulates orbital dynamics using vector algebra. pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
                             <img src="gravityDemo1.gif" alt="Orbital Gravity Simulation GIF 1" style="width:100%; height:auto;"/>
                             <img src="gravity2SourcesSmall.gif" alt="Orbital Gravity Simulation GIF 2" style="width:100%; height:auto;"/>
                             `;
                 modalBody.html(content);                            
                 break;
+            case 'About':
+                modal.find('.modal-title').text('About me')
+var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software developement in web developement on the .NET runtime</h5><br>
+    <!-- UNICEF EPP 2 Project -->
+    <h3><b>1) UNICEF EPP 2</b></h3>
+    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
+    <p><strong>Duration:</strong> April 2022 – April 2023</p>
+    <p><strong>Role:</strong> Full Stack Developer</p>
+    <p><strong>Technologies:</strong> Dot Net Core, .NET MVC, C#, SQL Server, HTML, CSS, Git, Azure DevOps, AngularJS, JavaScript, Stored Procedures</p>
+    <p><strong>Description:</strong> This is an online portal where different countries submit their country risks, responses, and actions, which are analyzed to take appropriate actions to avoid these risks.</p>
+    <ul>
+        <li>Implemented new requirements for the tool. Designed User Interface using HTML5, CSS, JavaScript, jQuery, and AngularJS.</li>
+        <li>Worked on the Azure platform to implement functionalities using Agile methodology.</li>
+        <li>Gathered requirements from the client and developed the project accordingly using .NET MVC and C#.</li>
+        <li>Performed unit testing and regression testing to meet the deadlines of the PBI requirement.</li>
+        <li>Wrote complex queries using CTEs (Common Table Expressions), temp tables, table-valued functions, scripts, and optimization using query execution analysis.</li>
+    </ul>
+
+    <!-- IOM ePHR Project -->
+    <h3>2)<b>IOM ePHR</b></h3>
+    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
+    <p><strong>Duration:</strong> April 2023 – January 2024</p>
+    <p><strong>Role:</strong> Full Stack Developer</p>
+    <p><strong>Technologies:</strong> Dot Net Core Web API, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
+    <p><strong>Description:</strong> This is a medical platform for doctors and medical professionals to maintain, update, and create records of migrants who have crossed international borders.</p>
+    <ul>
+        <li>Developed complete features from design to code and testing through Angular 15 UI and .NET Core 7.</li>
+        <li>Implemented features for PDF handling, security fixes, report, and ID card generation.</li>
+        <li>Collaborated with colleagues to integrate different functionalities related to multi-language support in the web application.</li>
+        <li>Wrote SQL stored procedures for generating text files containing data of migrants.</li>
+        <li>Used AI and Non-AI tools (embedded JavaScript in Adobe Acrobat) to automate and deliver rapid solutions.</li>
+    </ul>
+
+    <h3>3)<b>Datamatics</b></h3>
+    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
+    <p><strong>Duration:</strong> January 2024 - Jul 2024</p>
+    <p><strong>Role:</strong> Back end developer</p>
+    <p><strong>Technologies:</strong> Dot Net Core Web API, C#, PostgreSQL, HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
+    <p><strong>Description:</strong> This was a online platform for cloud computing cost analysis and management tool</p>
+    <ul>
+        <li>Implemented the backend end points with .NET Core web API and PostgreSQL database</li>
+        <li>Created a bactch processing console application to insert bulk data</li>
+    </ul>
+`;
+modalBody.html(content);
+break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
