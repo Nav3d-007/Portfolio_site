@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'About':
                 modal.find('.modal-title').text('About me')
-var content = ` <h5>Hi, I'm Naved and I have 3+ years of professional fullstack developement in web developement on the .NET runtime</h5><br>
+var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack developement in web developement on the .NET runtime</h5><br>
     <!-- UNICEF EPP 2 Project -->
     <h3><b>1) UNICEF EPP 2</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
