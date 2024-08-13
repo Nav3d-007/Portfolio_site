@@ -190,10 +190,11 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software d
     <p><strong>Description:</strong> This is an online portal where different countries submit their country risks, responses, and actions, which are analyzed to take appropriate actions to avoid these risks.</p>
     <ul>
         <li>Implemented new requirements for the tool. Designed User Interface using HTML5, CSS, JavaScript, jQuery, and AngularJS.</li>
-        <li>Worked on the Azure platform to implement functionalities using Agile methodology.</li>
+        <li>Implemented asynchronous endpoints and services in the webserver/web API to implement functionalities using Agile methodology</li>
         <li>Gathered requirements from the client and developed the project accordingly using .NET MVC and C#.</li>
         <li>Performed unit testing and regression testing to meet the deadlines of the PBI requirement.</li>
-        <li>Wrote complex queries using CTEs (Common Table Expressions), temp tables, table-valued functions, scripts, and optimization using query execution analysis.</li>
+        <li>Wrote complex queries using CTEs (Common Table Expressions), temp tables, table-valued functions, (INNER, LEFT, FULL)s JOINS, and script</li>
+        <li>Improved Query Performance and Optimized data CRUDE operations by creating clustered indexes and analysis by using query execution analysis.</li>
     </ul>
 
     <!-- IOM ePHR Project -->
@@ -204,11 +205,11 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software d
     <p><strong>Technologies:</strong> Dot Net Core Web API, jQuery, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
     <p><strong>Description:</strong> This is a medical platform for doctors and medical professionals to maintain, update, and create records of migrants who have crossed international borders.</p>
     <ul>
-        <li>Developed complete features from design to code and testing through Angular 15 UI and .NET Core 7.</li>
-        <li>Implemented features for PDF handling, security fixes, report, and ID card generation.</li>
-        <li>Collaborated with colleagues to integrate different functionalities related to multi-language support in the web application.</li>
-        <li>Wrote SQL stored procedures for generating text files containing data of migrants.</li>
-        <li>Used AI and Non-AI tools (embedded JavaScript in Adobe Acrobat) to automate and deliver rapid solutions.</li>
+        <li>Developed complete features from design to code (Front-end + API endpoints + ORM + SQL stored procedures) with through Angular 15 UI and .NET Core 7. and SQL server</li>
+        <li>Implemented asynchronous endpoints, services and features for PDF handling through the ITextsharp library.  Implemented security fixes, report generation, and ID card generation.</li>
+        <li>Collaborated with colleagues to integrate localization functionality to support multi-language in the web application.</li>
+        <li>Wrote SQL stored procedures for generating text files containing data of migrants from multiple tables.</li>
+        <li>Used embedded JavaScript in Adobe Acrobat  to create PDF forms</li>
     </ul>
 
     <h3>3)<b>Datamatics</b></h3>
@@ -219,7 +220,7 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional software d
     <p><strong>Description:</strong> This was a online platform for cloud computing cost analysis and management tool</p>
     <ul>
         <li>Implemented the backend end points with .NET Core web API and PostgreSQL database</li>
-        <li>Created a bactch processing console application to insert bulk data</li>
+        <li>Created a bactch processing console application to insert bulk data by extracting data from the JSON source and then calling the API endpoint of the application for bulk insert operation.</li>
     </ul>
 `;
 modalBody.html(content);
