@@ -25,15 +25,23 @@ body, html {
 }
 
 .taskbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 40px;
   background: #9b2525;
   display: flex;
   align-items: center;
-  top: 887px;
 }
+
+@media (max-height: 900px) {
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+  }
+}
+
 
 .description {
   position: relative;
@@ -261,8 +269,8 @@ body, html {
 /* Start Menu Styling */
 .start-menu {
   display: none;
-  position: absolute;
-  bottom: -500px;
+  position: fixed;
+  bottom: 0;
   left: 10px;
   width: 200px;
   background-color: rgba(153, 128, 128, 0.9);
@@ -271,6 +279,14 @@ body, html {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   padding: 10px;
+}
+
+@media (max-height: 900px) {
+  .start-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+  }
 }
 
 .start-menu ul {
