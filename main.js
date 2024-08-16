@@ -96,8 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setupDraggableIcons() {
-    const containerWidth = window.innerWidth; // Use viewport width
-    const containerHeight = window.innerHeight; // Use viewport height
+    //300 is offset for both cuz icons get over shadowed by music player
+    const containerWidth = window.innerWidth - 300; 
+    const containerHeight = window.innerHeight - 300; 
 
         icons.forEach(icon => {
             const iconWidth = icon.offsetWidth;
