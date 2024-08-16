@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.find('.modal-title').text('About me')
 var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack developement experience in web developement on the .NET runtime</h5><br>
     <!-- UNICEF EPP 2 Project -->
-    <h3><b>1) UNICEF EPP 2</b></h3>
+    <h3><b>1)EPP 2</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2022 – April 2023</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
@@ -225,7 +225,7 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack 
     </ul>
 
     <!-- IOM ePHR Project -->
-    <h3>2)<b>IOM ePHR</b></h3>
+    <h3>2)<b>ePHR</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2023 – January 2024</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
@@ -240,7 +240,7 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack 
         <li>Used embedded JavaScript in Adobe Acrobat  to create PDF forms</li>
     </ul>
 
-    <h3>3)<b>Datamatics</b></h3>
+    <h3>3)<b>COE</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> January 2024 - Jul 2024</p>
     <p><strong>Role:</strong> Back end developer</p>
