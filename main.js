@@ -96,7 +96,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setupDraggableIcons() {
+    const containerWidth = window.innerWidth; // Use viewport width
+    const containerHeight = window.innerHeight; // Use viewport height
+
         icons.forEach(icon => {
+            const iconWidth = icon.offsetWidth;
+            const iconHeight = icon.offsetHeight;
+    
+            let randomX, randomY;
+            let isPositionValid = false;
+    
+            while (!isPositionValid) {
+                randomX = Math.floor(Math.random() * (containerWidth - iconWidth));
+                randomY = Math.floor(Math.random() * (containerHeight - iconHeight));
+    
+                if (randomX >= 0 && randomY >= 0 &&
+                    randomX + iconWidth <= containerWidth &&
+                    randomY + iconHeight <= containerHeight) {
+                    isPositionValid = true;
+                }
+            }
+    
+            // Apply the positions
+            icon.style.position = 'absolute';
+            icon.style.left = `${randomX}px`;
+            icon.style.top = `${randomY}px`;
             icon.addEventListener('mousedown', handleDragStart);
             icon.addEventListener('mouseup', handleDragEnd);
         });
@@ -265,4 +289,5 @@ break;
             openModal(project);
         });
     });
+
 });
