@@ -180,6 +180,12 @@ body, html {
   margin-bottom: 10px;
 }
 
+.songImage {
+    width: 120px;
+    height: 90px;
+    margin-left: 70px;
+}
+
 #songWallpapper {
   display: block;
   margin: 0 auto 10px;

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const currentSongTitle = document.getElementById('currentSongTitle');
+    const currentSongImage = document.getElementById('currentSongImage');
     const volumeSlider = document.getElementById('volumeSlider');
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const songSrc = songItem.getAttribute('data-src');
         const songTitle = songItem.textContent;
         currentSongTitle.textContent = songTitle;
+        currentSongImage.src = songSrc.replace('mp3','jpg');
         audioPlayer.unload();
         audioPlayer._src = songSrc;
         audioPlayer.load();
@@ -97,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setupDraggableIcons() {
     //300 is offset for both cuz icons get over shadowed by music player
-    const containerWidth = window.innerWidth - 300; 
-    const containerHeight = window.innerHeight - 300; 
+    const containerWidth = window.innerWidth - 400; 
+    const containerHeight = window.innerHeight - 400; 
 
         icons.forEach(icon => {
             const iconWidth = icon.offsetWidth;
