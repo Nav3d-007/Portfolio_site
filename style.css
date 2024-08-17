@@ -29,7 +29,7 @@ body, html {
   bottom: 0;
   width: 100%;
   height: 40px;
-  background: #9b2525;
+  background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
   display: flex;
   align-items: center;
 }
@@ -42,13 +42,60 @@ body, html {
   }
 }
 
-
 .description {
   position: relative;
   display: block;
   z-index: 3;
   color: var(--black);
+  background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%); 
+  padding: 6px 10px;
+  margin-left: 25px;
+  border-radius: 10px; 
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
+
+.description:hover {
+  transform: translateY(-5px); /* Lift the button on hover */
+  background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%); /* Change gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Deepen the shadow on hover */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.description:hover {
+  animation: pulse 2s infinite; /* Apply the pulse animation on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .description {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
 
 .models {
   width: 0%;
@@ -278,13 +325,14 @@ body, html {
   position: fixed;
   bottom: 0;
   left: 10px;
-  width: 200px;
-  background-color: rgba(153, 128, 128, 0.9);
-  border: 1px solid #cc6363;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 250px; /* Slightly larger for better visibility */
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Flashy gradient */
+  border: 1px solid #ff5a5a;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
   z-index: 1000;
-  padding: 10px;
+  padding: 15px;
+  animation: slideUp 0.5s ease-out; /* Smooth slide-up animation on display */
 }
 
 @media (max-height: 900px) {
@@ -292,6 +340,18 @@ body, html {
     position: fixed;
     top: auto;
     bottom: 0;
+  }
+}
+
+/* Smooth slide-up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -303,43 +363,96 @@ body, html {
 
 .start-menu-item {
   position: relative;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
-  background-color: #ffffff;
-  margin: 5px 0;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for a sleek look */
+  margin: 8px 0;
+  border-radius: 8px;
   text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
 }
 
 .start-menu-item:after {
   content: '>';
-  color: black;
+  color: #ff5a5a; /* Matching the border color */
   font-weight: bold;
   font-size: 20px;
+  transition: transform 0.3s ease; /* Smooth arrow animation */
 }
 
 .start-menu-item:hover {
-  background-color: #8a8080;
+  transform: translateY(-5px); /* Lift on hover */
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
+.start-menu-item:hover:after {
+  transform: translateX(5px); /* Slide the arrow slightly to the right */
+}
+
+/* Start Menu Description */
 .start-menu-description {
   display: none;
   position: absolute;
   left: 100%;
   top: 0;
-  width: 200px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.95); /* Almost opaque white */
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Deep shadow for emphasis */
   padding: 10px;
   z-index: 1000;
+  animation: fadeIn 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Fade-in animation for the description */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .start-menu-item:hover .start-menu-description {
   display: block;
 }
 
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .start-menu {
+    width: 200px;
+    padding: 10px;
+  }
+
+  .start-menu-item {
+    padding: 10px;
+  }
+
+  .start-menu-description {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .start-menu {
+    width: 180px;
+    padding: 8px;
+  }
+
+  .start-menu-item {
+    padding: 8px;
+  }
+
+  .start-menu-description {
+    width: 160px;
+  }
+}
