@@ -204,6 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             `;
                 modalBody.html(content);                            
                 break;
+            case 'SpaceWars':
+                modal.find('.modal-title').text('Space wars!')
+                modalBody.html('<iframe width="730" height="750" src="https://editor.p5js.org/snaved159/full/ldELmtB3u"></iframe>');                            
+                break;
             case 'About':
                 modal.find('.modal-title').text('About me')
 var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack developement experience in web developement on the .NET runtime</h5><br>
