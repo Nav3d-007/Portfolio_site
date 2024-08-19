@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.html(content);                            
                 break;
             case 'SpaceWars':
-                modal.find('.modal-title').text('Space wars!')
+                modal.find('.modal-title').text('Space wars! -- PLEASE CLICK ON THE SCREEN OF THE GAME ONCE SO THAT IT CAN READ YOUR ARROW KEYS ON KEYBOARD')
                 modalBody.html('<iframe width="730" height="750" src="https://editor.p5js.org/snaved159/full/ldELmtB3u"></iframe>');                            
                 break;
             case 'About':
