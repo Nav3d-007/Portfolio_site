@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
     
-            // Apply the positions
             icon.style.position = 'absolute';
             icon.style.left = `${randomX}px`;
             icon.style.top = `${randomY}px`;
@@ -194,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break; 
             case 'MusicVisualizer':
                 modalBody.html(`<iframe  width="800" height="800" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
-                modal.find('.modal-title').text('Audio visualization');
+                modal.find('.modal-title').text('Audio visualization - using the FFT (fast fourier transform) provided by p5');
                 break; 
             case 'OrbitalGravitySimulation':
                 modal.find('.modal-title').text('Orbital Gravity Simulation')
