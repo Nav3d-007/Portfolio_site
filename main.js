@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+    if (isMobile) {
+      alert('For the best experience, switch to "Desktop mode" in your browser settings.');
+    }
     const icons = document.querySelectorAll('.icon');
     const modal = $('#projectModal');
     const modalBody = $('#modalBody');
@@ -11,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volumeSlider');
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
+  
 
     const audioPlayer = new Howl({
         src: [''],
