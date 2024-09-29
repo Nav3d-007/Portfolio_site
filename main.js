@@ -199,11 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 break; 
             case 'MusicVisualizer':
                 modalBody.html(`<iframe  width="800" height="800" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
-                modal.find('.modal-title').text('Audio visualization - using the FFT (fast fourier transform) provided by p5');
+                modal.find('.modal-title').text('Audio visualization - using the FFT (Fast Fourier transform) provided by p5');
                 break; 
             case 'OrbitalGravitySimulation':
                 modal.find('.modal-title').text('Orbital Gravity Simulation')
-                var content = `<p>Simulates orbital dynamics using vector algebra. pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
+                var content = `<p>Simulates orbital dynamics using vector algebra. Pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
                             <img src="gravityDemo1.gif" alt="Orbital Gravity Simulation GIF 1" style="width:100%; height:auto;"/>
                             <img src="gravity2SourcesSmall.gif" alt="Orbital Gravity Simulation GIF 2" style="width:100%; height:auto;"/>
                             `;
@@ -215,8 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'About':
                 modal.find('.modal-title').text('About me')
-var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack developement experience in web developement on the .NET runtime</h5><br>
-    <!-- UNICEF EPP 2 Project -->
+var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack development experience in web development on the .NET runtime</h5><br>
     <h3><b>1)EPP 2</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2022 – April 2023</p>
@@ -232,7 +231,6 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack 
         <li>Improved Query Performance and Optimized data CRUDE operations by creating clustered indexes and analysis by using query execution analysis.</li>
     </ul>
 
-    <!-- IOM ePHR Project -->
     <h3>2)<b>ePHR</b></h3>
     <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2023 – January 2024</p>
@@ -246,17 +244,6 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional fullstack 
         <li>Wrote SQL stored procedures for generating text files containing data of migrants from multiple tables.</li>
         </li>Wrote scripts for reading millions of records from Excel file data source into a master table through bulk insert query in SQL </li>
         <li>Used embedded JavaScript in Adobe Acrobat  to create PDF forms</li>
-    </ul>
-
-    <h3>3)<b>COE</b></h3>
-    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
-    <p><strong>Duration:</strong> January 2024 - Jul 2024</p>
-    <p><strong>Role:</strong> Back end developer</p>
-    <p><strong>Technologies:</strong> Dot Net Core Web API, C#, PostgreSQL, HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
-    <p><strong>Description:</strong> This was a online platform for cloud computing cost analysis and management tool</p>
-    <ul>
-        <li>Implemented the backend end points with .NET Core web API and PostgreSQL database</li>
-        <li>Created a bactch processing console application to insert bulk data by extracting data from the JSON source and then calling the API endpoint of the application for bulk insert operation.</li>
     </ul>
 `;
 modalBody.html(content);
