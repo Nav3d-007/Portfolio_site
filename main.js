@@ -193,10 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.html(`<iframe width="560" height="315" src="https://www.youtube.com/embed/9BaUaAe4TmI?si=QRom_XN0AWaW5BO3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> <br><a href="https://github.com/spyrex69/2D-Fluid-Solver/blob/main/Fluidsim2D.cpp" > CLICK HERE TO SEE MY CODE ON GITHUB </a>`);
                 modal.find('.modal-title').text('2D fluid solver');
                 break;
-            case 'Pendulumsketch':
-                modalBody.html(`<iframe width="700" height="700" src="https://editor.p5js.org/snaved159/full/Mi4wM-xu2"></iframe>`);
-                modal.find('.modal-title').text('Double Pendulum (Randomized parameters per launch)');
-                break; 
             case 'MusicVisualizer':
                 modalBody.html(`<iframe  width="800" height="800" src="https://editor.p5js.org/snaved159/full/kxgVyb5mX"></iframe>`);
                 modal.find('.modal-title').text('Audio visualization - using the FFT (Fast Fourier transform) provided by p5');
@@ -217,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.find('.modal-title').text('About me')
 var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack development experience in web development on the .NET runtime</h5><br>
     <h3><b>1)EPP 2</b></h3>
-    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2022 – April 2023</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
     <p><strong>Technologies:</strong> Dot Net Core, .NET MVC, jQuery, C#, SQL Server, HTML, CSS, Git, Azure DevOps, AngularJS, JavaScript, Stored Procedures</p>
@@ -232,7 +227,6 @@ var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack
     </ul>
 
     <h3>2)<b>ePHR</b></h3>
-    <p><strong>Company:</strong> Datamatics Global Services Ltd.</p>
     <p><strong>Duration:</strong> April 2023 – January 2024</p>
     <p><strong>Role:</strong> Full Stack Developer</p>
     <p><strong>Technologies:</strong> Dot Net Core Web API, jQuery, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
