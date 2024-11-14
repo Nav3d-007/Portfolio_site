@@ -211,35 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'About':
                 modal.find('.modal-title').text('About me')
-var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack development experience in web development on the .NET runtime</h5><br>
-    <h3><b>1)EPP 2</b></h3>
-    <p><strong>Duration:</strong> April 2022 – April 2023</p>
-    <p><strong>Role:</strong> Full Stack Developer</p>
-    <p><strong>Technologies:</strong> Dot Net Core, .NET MVC, jQuery, C#, SQL Server, HTML, CSS, Git, Azure DevOps, AngularJS, JavaScript, Stored Procedures</p>
-    <p><strong>Description:</strong> This is an online portal where different countries submit their country risks, responses, and actions, which are analyzed to take appropriate actions to avoid these risks.</p>
-    <ul>
-        <li>Implemented new requirements for the tool. Designed User Interface using HTML5, CSS, JavaScript, jQuery, and AngularJS.</li>
-        <li>Implemented asynchronous endpoints and services in the webserver/web API to implement functionalities using Agile methodology</li>
-        <li>Gathered requirements from the client and developed the project accordingly using .NET MVC and C#.</li>
-        <li>Performed unit testing and regression testing to meet the deadlines of the PBI requirement.</li>
-        <li>Wrote complex queries using CTEs (Common Table Expressions), temp tables, table-valued functions, (INNER, LEFT, FULL)s JOINS, and script</li>
-        <li>Improved Query Performance and Optimized data CRUDE operations by creating clustered indexes and analysis by using query execution analysis.</li>
-    </ul>
-
-    <h3>2)<b>ePHR</b></h3>
-    <p><strong>Duration:</strong> April 2023 – January 2024</p>
-    <p><strong>Role:</strong> Full Stack Developer</p>
-    <p><strong>Technologies:</strong> Dot Net Core Web API, jQuery, .NET MVC, Node.js, NPM, C#, SQL Server (Dual server config), HTML, CSS, Git, Azure DevOps, Angular 15, TypeScript, JavaScript, Entity Framework</p>
-    <p><strong>Description:</strong> This is a medical platform for doctors and medical professionals to maintain, update, and create records of migrants who have crossed international borders.</p>
-    <ul>
-        <li>Developed complete features from design to code (Front-end + API endpoints + ORM + SQL stored procedures) with through Angular 15 UI and .NET Core 7. and SQL server</li>
-        <li>Implemented asynchronous endpoints, services and features for PDF handling through the ITextsharp library.  Implemented security fixes, report generation, and ID card generation.</li>
-        <li>Collaborated with colleagues to integrate localization functionality to support multi-language in the web application.</li>
-        <li>Wrote SQL stored procedures for generating text files containing data of migrants from multiple tables.</li>
-        </li>Wrote scripts for reading millions of records from Excel file data source into a master table through bulk insert query in SQL </li>
-        <li>Used embedded JavaScript in Adobe Acrobat  to create PDF forms</li>
-    </ul>
-`;
+var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack development experience on the .NET runtime</h5><br>`;
 modalBody.html(content);
 break;
             default:
