@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'SpaceWars':
                 modal.find('.modal-title').text('Please click on the screen once so it can read input. HOW TO PLAY? LEFT mouse click = bullet, Right mouse click = bomb and arrow/WASD for movement')
-                modalBody.html('<iframe src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
+                modalBody.html('<iframe  width="800" height="600" src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
                 break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
