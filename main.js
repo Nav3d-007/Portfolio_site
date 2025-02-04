@@ -206,14 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.html(content);                            
                 break;
             case 'SpaceWars':
-                modal.find('.modal-title').text('Space wars! -- PLEASE CLICK ON THE SCREEN OF THE GAME ONCE SO THAT IT CAN READ YOUR ARROW KEYS ON KEYBOARD')
-                modalBody.html('<iframe width="730" height="750" src="https://editor.p5js.org/snaved159/full/ldELmtB3u"></iframe>');                            
+                modal.find('.modal-title').text('Please click on the screen once so it can read input. HOW TO PLAY? LEFT mouse click = bullet, Right mouse click = bomb and arrow/WASD for movement')
+                modalBody.html('<iframe src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
                 break;
-            case 'About':
-                modal.find('.modal-title').text('About me')
-var content = ` <h5>Hi, I'm Naved and I have 2+ years of professional full-stack development experience on the .NET runtime</h5><br>`;
-modalBody.html(content);
-break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
