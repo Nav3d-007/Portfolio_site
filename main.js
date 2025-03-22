@@ -209,6 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.find('.modal-title').text('HOW TO PLAY? LEFT mouse click = bullet, Right mouse click = bomb and arrow/WASD for movement')
                 modalBody.html('<iframe  width="850" height="650" src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
                 break;
+            case 'EarthQuakes':
+              modal.find('.modal-title').text('Visualization of real world Earthquakes in the past 30 days from now around the planet.')
+             modalBody.html('<iframe width="1024" height="512" src="https://editor.p5js.org/snaved159/full/lgDSXK8Yc"></iframe>');                            
+            break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
