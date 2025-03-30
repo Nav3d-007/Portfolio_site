@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
             case 'UpWay':
                 modal.find('.modal-title').text('UP WAY GAME')
-               modalBody.html('<p>IF GAME NOT LOADING <a href="https://spy-rex.itch.io/up-way">Play UP WAY on itch.io</a></p><br><iframe frameborder="0" src="https://itch.io/embed-upload/13230557?color=333333" allowfullscreen="" width="980" height="640"><a href="https://spy-rex.itch.io/up-way">Play UP WAY on itch.io</a></iframe>');                            
+               modalBody.html('<p><a href="https://spy-rex.itch.io/up-way">Play UP WAY on itch.io</a></p> <br> <img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
               break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
