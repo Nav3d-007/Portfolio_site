@@ -213,6 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
               modal.find('.modal-title').text('Visualization of real world Earthquakes in the past 30 days from now around the planet.')
              modalBody.html('<iframe width="1024" height="512" src="https://editor.p5js.org/snaved159/full/lgDSXK8Yc"></iframe>');                            
             break;
+            case 'UpWay':
+                modal.find('.modal-title').text('UP WAY GAME')
+               modalBody.html('<p>IF GAME NOT LOADING <a href="https://spy-rex.itch.io/up-way">Play UP WAY on itch.io</a></p><br><iframe frameborder="0" src="https://itch.io/embed-upload/13230557?color=333333" allowfullscreen="" width="980" height="640"><a href="https://spy-rex.itch.io/up-way">Play UP WAY on itch.io</a></iframe>');                            
+              break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
