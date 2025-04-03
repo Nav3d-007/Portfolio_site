@@ -7,81 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const icons = document.querySelectorAll('.icon');
     const modal = $('#projectModal');
     const modalBody = $('#modalBody');
-    const songListItems = document.querySelectorAll('.song-item');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const currentSongTitle = document.getElementById('currentSongTitle');
-    const currentSongImage = document.getElementById('currentSongImage');
-    const volumeSlider = document.getElementById('volumeSlider');
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
-  
-
-    const audioPlayer = new Howl({
-        src: [''],
-        autoplay: false,
-        volume: 0.5,
-        onend: function() {
-            playNextSong();
-        }
-    });
 
     let isDragging = false;
     let currentIcon = null;
-    let currentSongIndex = 0;
-    let isPlaying = false;
 
-    const songs = Array.from(songListItems).map(item => ({
-        src: item.getAttribute('data-src'),
-        title: item.textContent
-    }));
-
-    function loadSong(index) {
-        const songItem = songListItems[index];
-        const songSrc = songItem.getAttribute('data-src');
-        const songTitle = songItem.textContent;
-        currentSongTitle.textContent = songTitle;
-        currentSongImage.src = songSrc.replace('mp3','jpg');
-        audioPlayer.unload();
-        audioPlayer._src = songSrc;
-        audioPlayer.load();
-    }
-
-    function playPauseSong() {
-        if (isPlaying) {
-            audioPlayer.pause();
-            playPauseBtn.textContent = '▶';
-        } else {
-            audioPlayer.play();
-            playPauseBtn.textContent = '⏸';
-        }
-        isPlaying = !isPlaying;
-    }
-
-    function playNextSong() {
-        currentSongIndex = (currentSongIndex + 1) % songListItems.length;
-        loadSong(currentSongIndex);
-        audioPlayer.play();
-        isPlaying = true;
-        playPauseBtn.textContent = '⏸';
-    }
-
-    function playPrevSong() {
-        currentSongIndex = (currentSongIndex - 1 + songListItems.length) % songListItems.length;
-        loadSong(currentSongIndex);
-        audioPlayer.play();
-        isPlaying = true;
-        playPauseBtn.textContent = '⏸';
-    }
-
-    function togglePlayPause() {
-        if (isPlaying) {
-            pauseSong();
-        } else {
-            playSong();
-        }
-    }
 
     function handleDragStart(e) {
         currentIcon = e.target;
@@ -103,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setupDraggableIcons() {
-    //300 is offset for both cuz icons get over shadowed by music player
     const containerWidth = window.innerWidth - 400; 
     const containerHeight = window.innerHeight - 400; 
 
@@ -135,27 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('mousemove', handleDrag);
     }
 
-    playPauseBtn.addEventListener('click', playPauseSong);
-    nextBtn.addEventListener('click', playNextSong);
-    prevBtn.addEventListener('click', playPrevSong);
-    volumeSlider.addEventListener('input', (e) => {
-        audioPlayer.volume(e.target.value / 10);
-    });
-
-    songListItems.forEach((songItem, index) => {
-        songItem.addEventListener('click', () => {
-            currentSongIndex = index;
-            loadSong(index);
-            audioPlayer.play();
-            isPlaying = true;
-            playPauseBtn.textContent = '⏸';
-        });
-    });
-
     setupDraggableIcons();
-
-    // Initial load
-    loadSong(currentSongIndex);
 
     icons.forEach(icon => {
         icon.addEventListener('mousedown', (e) => {
