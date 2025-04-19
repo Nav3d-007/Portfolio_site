@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
             case 'UpWay':
                 modal.find('.modal-title').text('UP WAY GAME')
-               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a></p> <br> <img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
+               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a></p> <br> <p><a href="https://bongseng.itch.io/">Art created by bongseng</a></p> <br><img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
               break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
