@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'SpaceWars':
                 modal.find('.modal-title').text('HOW TO PLAY? LEFT mouse click = bullet, Right mouse click = bomb and arrow/WASD for movement')
-                modalBody.html('<iframe  width="850" height="650" src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
+                modalBody.html('<p><a href="https://bongseng.itch.io/">Art created by bongseng</a></p> <br><iframe  width="850" height="650" src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
                 break;
             case 'EarthQuakes':
               modal.find('.modal-title').text('Visualization of real world Earthquakes in the past 30 days from now around the planet.')
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
             case 'UpWay':
                 modal.find('.modal-title').text('UP WAY GAME')
-               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a></p> <br> <p><a href="https://bongseng.itch.io/">Art created by bongseng</a></p> <br><img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
+               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a><br><img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
               break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
