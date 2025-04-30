@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'OrbitalGravitySimulation':
                 modal.find('.modal-title').text('Orbital Gravity Simulation')
                 var content = `<p>Simulates orbital dynamics using vector algebra. Pythagorean theorem in C++. <a href="https://github.com/spyrex69/orbital-gravity-sim" target="_blank">View Repository</a></p>
-                            <img src="gravityDemo1.gif" alt="Orbital Gravity Simulation GIF 1" style="width:100%; height:auto;"/>
-                            <img src="gravity2SourcesSmall.gif" alt="Orbital Gravity Simulation GIF 2" style="width:100%; height:auto;"/>
+                            <img src="Assets/gravityDemo1.gif" alt="Orbital Gravity Simulation GIF 1" style="width:100%; height:auto;"/>
+                            <img src="Assets/gravity2SourcesSmall.gif" alt="Orbital Gravity Simulation GIF 2" style="width:100%; height:auto;"/>
                             `;
                 modalBody.html(content);                            
                 break;
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
             case 'UpWay':
                 modal.find('.modal-title').text('UP WAY GAME')
-               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a><br><img src="gameDemo.gif"  style="width:100%; height:auto;"/>');                            
+               modalBody.html('<p><a href="https://naved90.itch.io/up-way">Play UP WAY on itch.io</a><br><img src="Assets/gameDemo.gif"  style="width:100%; height:auto;"/>');                            
               break;
             default:
                 modalBody.html(`<p>Project not found.</p>`);
