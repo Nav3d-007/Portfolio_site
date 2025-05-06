@@ -119,6 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.find('.modal-title').text('HOW TO PLAY? LEFT mouse click = bullet, Right mouse click = bomb and arrow/WASD for movement')
                 modalBody.html('<p><a href="https://bongseng.itch.io/">Art created by bongseng</a></p> <br><iframe  width="850" height="650" src="https://editor.p5js.org/snaved159/full/hKcTgE64E"></iframe>');                            
                 break;
+            case 'ClothSim':
+                modal.find('.modal-title').text('Cloth simulator')
+                modalBody.html('<p><a href="https://superheroslice.pages.dev">Click to check it out on the site</a></p> <br><iframe src="https://superheroslice.pages.dev" width="100%" height="600" frameborder="0"></iframe>');                            
+                break;
             case 'EarthQuakes':
               modal.find('.modal-title').text('Visualization of real world Earthquakes in the past 30 days from now around the planet.')
              modalBody.html('<iframe width="1024" height="512" src="https://editor.p5js.org/snaved159/full/lgDSXK8Yc"></iframe>');                            
