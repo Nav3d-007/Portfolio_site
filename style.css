@@ -3,7 +3,7 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   overflow: hidden;
 }
 
@@ -13,25 +13,65 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.3s ease;
 }
 
 #desktop {
   position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .icon {
   position: absolute;
   cursor: pointer;
+  width: 120px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon.dragging {
+  opacity: 0.8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.icon:hover img {
+  transform: translateY(-5px);
+}
+
+.icon span {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+  font-weight: 500;
 }
 
 .taskbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 40px;
+  height: 50px;
   background: linear-gradient(135deg, #3970b8 0%, #2f6ab8 100%);
   display: flex;
   align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 @media screen and (max-width: 768px) {
@@ -61,7 +101,6 @@ body, html {
   }
 }
 
-
 @media (max-height: 900px) {
   .taskbar {
     position: fixed;
@@ -89,9 +128,9 @@ body, html {
 }
 
 .description:hover {
-  transform: translateY(-5px); /* Lift the button on hover */
-  background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%); /* Change gradient on hover */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Deepen the shadow on hover */
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes pulse {
@@ -107,7 +146,7 @@ body, html {
 }
 
 .description:hover {
-  animation: pulse 2s infinite; /* Apply the pulse animation on hover */
+  animation: pulse 2s infinite;
 }
 
 @media screen and (max-width: 768px) {
@@ -124,7 +163,6 @@ body, html {
   }
 }
 
-
 .models {
   width: 0%;
   height: 7vh;
@@ -134,140 +172,52 @@ body, html {
   background: var(--primary);
 }
 
-.btn {
-  background-color: #333;
-  border: none;
-  padding: 10px 20px;
-  color: var(--white);
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: background-color 0.3s ease;
-  &:before, &:after {
-      content: '';
-      position: absolute;
-      height: 10px;
-      width: 10px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      border-radius: 50%;
-  }
-  &:before {
-      background: var(--secondary-blue);
-      transition: 0.6s ease-in;
-      transition-delay: .1s;
-  }
-  &:after {
-      background: var(--tertiary-blue);
-      transition: 0.8s ease;
-      transition-delay: .4s;
-  }
-  &:hover {
-      &:before, &:after {
-          transform: translate(-50%, -50%) scale(310);
-      }
-  }
-}
-
-.icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.icon img {
-  width: 100px;
-  height: 100px;
-}
-
-.icon span {
-  color: black;
-  position: absolute;
-  top: 100px;
-  font-size: larger;
-  text-align: center;
-}
-
-.modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Ensures the modal takes full screen height */
-  outline: none; /* Removes the outline when focused */
-}
-
-.modal-dialog {
-  max-width: 90%; /* Adjusts the max width to be more flexible */
-  max-width: 1200px; /* Adjust width as needed */
-  margin: 30px auto; /* Centers the modal horizontally and gives it some vertical margin */
-}
-
-
-@media (max-width: 768px) {
-  .modal-content {
-    width: 100%;
-    padding: 15px; /* Padding to ensure contents aren't cramped on small screens */
-  }
-}
-
 .modal-content {
-  max-height: 90vh; /* Ensures the modal content doesn't exceed the viewport height */
-  overflow-y: auto; /* Allows scrolling if the content is too tall */
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: none;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #3970b8 0%, #2f6ab8 100%);
+  color: white;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-title {
+  font-weight: 600;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover {
+  color: white;
+  opacity: 1;
 }
-
 
 .start-menu {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 300px;
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   display: none;
-  position: fixed;
-  bottom: 0;
-  left: 10px;
-  width: 250px; /* Slightly larger for better visibility */
-  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Flashy gradient */
-  border: 1px solid #ff5a5a;
-  border-radius: 10px; /* Rounded corners for a modern look */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
   z-index: 1000;
-  padding: 15px;
-  animation: slideUp 0.5s ease-out; /* Smooth slide-up animation on display */
-}
-
-@media (max-height: 900px) {
-  .start-menu {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-  }
-}
-
-/* Smooth slide-up animation */
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  overflow: hidden;
+  transform-origin: bottom left;
 }
 
 .start-menu ul {
@@ -277,97 +227,186 @@ body, html {
 }
 
 .start-menu-item {
-  position: relative;
-  padding: 15px;
+  padding: 15px 20px;
+  color: white;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for a sleek look */
-  margin: 8px 0;
-  border-radius: 8px;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
-}
-
-.start-menu-item:after {
-  content: '>';
-  color: #ff5a5a; /* Matching the border color */
-  font-weight: bold;
-  font-size: 20px;
-  transition: transform 0.3s ease; /* Smooth arrow animation */
+  transition: background-color 0.2s ease;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .start-menu-item:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.start-menu-item:hover:after {
-  transform: translateX(5px); /* Slide the arrow slightly to the right */
+.start-menu-item {
+  position: relative;
 }
 
-/* Start Menu Description */
-.start-menu-description {
+.start-menu-item .start-menu-description {
   display: none;
   position: absolute;
   left: 100%;
   top: 0;
-  width: 220px;
-  background-color: rgba(255, 255, 255, 0.95); /* Almost opaque white */
-  border: 1px solid #ffcccc;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Deep shadow for emphasis */
-  padding: 10px;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease; /* Smooth fade-in effect */
+  background-color: rgba(40, 40, 40, 0.95);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 0 5px 5px 0;
+  width: 250px;
+  font-size: 14px;
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 2px solid #3970b8;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Fade-in animation for the description */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.start-menu-item.active .start-menu-description {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
+
+.start-menu-description:hover {
+  background-color: rgba(60, 60, 60, 0.95);
+}
+
+/* Show description when hovering over menu item */
 .start-menu-item:hover .start-menu-description {
   display: block;
 }
 
-/* Responsive adjustments for smaller screens */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease forwards;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* --- Responsive layout for tablets and below --- */
 @media screen and (max-width: 768px) {
-  .start-menu {
-    width: 200px;
-    padding: 10px;
+  body, html {
+    overflow-x: hidden;
+  }
+  #desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
   }
 
-  .start-menu-item {
-    padding: 10px;
+  .icon {
+    position: static !important;
+    margin: 16px auto;
+    width: 90vw;
+    max-width: 160px;
+    min-width: 80px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 2;
+  }
+
+  .icon img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .icon span {
+    position: static;
+    font-size: 1rem;
+    color: white;
+    margin-top: 6px;
+    display: block;
+  }
+
+  .taskbar {
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .start-menu {
+    width: 90vw;
+    left: 5vw;
+    bottom: 60px;
+    border-radius: 10px;
+    font-size: 1rem;
   }
 
   .start-menu-description {
-    width: 180px;
+    width: 70vw;
+    min-width: 120px;
+    font-size: 0.95rem;
+    padding: 10px;
+    left: 100%;
+    top: 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .modal-dialog {
+    max-width: 98vw !important;
+    margin: 8vw auto;
+  }
+  .modal-content {
+    border-radius: 10px;
+    font-size: 0.98rem;
+    padding: 0;
+  }
+  .modal-body {
+    padding: 10px;
+    overflow-x: auto;
   }
 }
 
+/* --- Extra small screens (phones) --- */
 @media screen and (max-width: 480px) {
+  .icon {
+    max-width: 95vw;
+    min-width: 60px;
+    padding: 8px;
+  }
+  .icon img {
+    width: 48px;
+    height: 48px;
+  }
   .start-menu {
-    width: 180px;
-    padding: 8px;
+    width: 98vw;
+    left: 1vw;
+    font-size: 0.95rem;
   }
-
-  .start-menu-item {
-    padding: 8px;
-  }
-
   .start-menu-description {
-    width: 160px;
+    width: 60vw;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .modal-dialog {
+    max-width: 99vw !important;
+    margin: 4vw auto;
+  }
+  .modal-content {
+    font-size: 0.95rem;
   }
 }

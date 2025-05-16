@@ -10,32 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = $('#startButton');
     const startMenu = $('#startMenu');
 
-    let isDragging = false;
-    let currentIcon = null;
-
-
-    function handleDragStart(e) {
-        currentIcon = e.target;
-        isDragging = true;
-        currentIcon.style.position = 'absolute';
-        currentIcon.style.zIndex = 1000;
-    }
-
-    function handleDragEnd(e) {
-        isDragging = false;
-        currentIcon = null;
-    }
-
-    function handleDrag(e) {
-        if (!isDragging) return;
-        const { clientX, clientY } = e;
-        currentIcon.style.left = `${clientX}px`;
-        currentIcon.style.top = `${clientY}px`;
-    }
-
-    function setupDraggableIcons() {
-    const containerWidth = window.innerWidth - 400; 
-    const containerHeight = window.innerHeight - 400; 
+    // Setup initial random positions for icons
+    function setupIcons() {
+        const containerWidth = window.innerWidth - 100; 
+        const containerHeight = window.innerHeight - 100; 
 
         icons.forEach(icon => {
             const iconWidth = icon.offsetWidth;
@@ -58,43 +36,73 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.style.position = 'absolute';
             icon.style.left = `${randomX}px`;
             icon.style.top = `${randomY}px`;
-            icon.addEventListener('mousedown', handleDragStart);
-            icon.addEventListener('mouseup', handleDragEnd);
         });
-
-        document.addEventListener('mousemove', handleDrag);
     }
 
-    setupDraggableIcons();
+    setupIcons();
+
+    // Initialize interact.js draggable
+    interact('.icon').draggable({
+        inertia: true,
+        modifiers: [
+            interact.modifiers.restrictRect({
+                restriction: 'parent',
+                endOnly: true
+            })
+        ],
+        autoScroll: true,
+        listeners: {
+            start (event) {
+                event.target.classList.add('dragging');
+                event.target.style.zIndex = 1000;
+            },
+            move (event) {
+                const target = event.target;
+                
+                // Get the current position
+                const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+                const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+                
+                // Update the element's position
+                target.style.transform = `translate(${x}px, ${y}px)`;
+                
+                // Store the position
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
+            },
+            end (event) {
+                event.target.classList.remove('dragging');
+                event.target.style.zIndex = 1;
+            }
+        }
+    });
+
+    // Single click/tap to open project, but not if dragging
+    let dragHappened = false;
+    interact('.icon').on('dragmove', function (event) {
+        dragHappened = true;
+    });
 
     icons.forEach(icon => {
-        icon.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            currentIcon = icon;
-            icon.style.zIndex = 1000;
-            icon.startX = e.clientX - icon.offsetLeft;
-            icon.startY = e.clientY - icon.offsetTop;
-        });
-
-        icon.addEventListener('dblclick', (e) => {
+        icon.addEventListener('click', (e) => {
+            // If drag just happened, do not open modal
+            if (dragHappened) {
+                dragHappened = false;
+                return;
+            }
             const project = icon.getAttribute('data-project');
             openModal(project);
         });
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging && currentIcon) {
-            currentIcon.style.left = `${e.clientX - currentIcon.startX}px`;
-            currentIcon.style.top = `${e.clientY - currentIcon.startY}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        if (currentIcon) {
-            currentIcon.style.zIndex = 1;
-            currentIcon = null;
-        }
+        // For touch devices, use Interact.js tap event
+        interact(icon).on('tap', function (event) {
+            // If drag just happened, do not open modal
+            if (dragHappened) {
+                dragHappened = false;
+                return;
+            }
+            const project = icon.getAttribute('data-project');
+            openModal(project);
+        });
     });
 
     function openModal(project) {
@@ -134,12 +142,32 @@ document.addEventListener('DOMContentLoaded', () => {
             default:
                 modalBody.html(`<p>Project not found.</p>`);
         }
+        
+        // Add loading animation
+        modalBody.prepend('<div class="loading-spinner" style="text-align: center; margin-bottom: 15px;"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div></div>');
+        
+        // Remove spinner after content loads
+        setTimeout(() => {
+            $('.loading-spinner').remove();
+        }, 1000);
+        
         modal.modal('show');
     }
 
     // Start Menu Logic
     startButton.on('click', function() {
         startMenu.toggle();
+        
+        // Add animation when opening menu
+        if (startMenu.is(':visible')) {
+            anime({
+                targets: '#startMenu',
+                opacity: [0, 1],
+                translateY: [10, 0],
+                easing: 'easeOutExpo',
+                duration: 300
+            });
+        }
     });
 
     $(document).on('click', function(event) {
@@ -154,21 +182,46 @@ document.addEventListener('DOMContentLoaded', () => {
         startMenu.hide();
     });
 
+    // Make descriptions clickable too
+    // Enable both hover and click to show start menu descriptions
     document.querySelectorAll('.start-menu-item').forEach(item => {
-        item.addEventListener('mouseover', (e) => {
-            const description = e.currentTarget.querySelector('.start-menu-description');
-            description.style.display = 'block';
+        // Hover to show
+        item.addEventListener('mouseenter', function() {
+            item.classList.add('active');
         });
-    
-        item.addEventListener('mouseout', (e) => {
-            const description = e.currentTarget.querySelector('.start-menu-description');
-            description.style.display = 'none';
+        item.addEventListener('mouseleave', function() {
+            item.classList.remove('active');
         });
-    
-        item.addEventListener('click', () => {
+
+        // Click to toggle (for accessibility)
+        item.addEventListener('click', function(e) {
+            if (e.target.classList.contains('start-menu-description')) return;
+            item.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Click description to open modal
+        item.querySelector('.start-menu-description').addEventListener('click', function(e) {
             const project = item.getAttribute('data-project');
             openModal(project);
+            item.classList.remove('active');
+            e.stopPropagation();
         });
     });
+    // Hide all submenus if clicking outside
+    document.addEventListener('click', function(e) {
+        document.querySelectorAll('.start-menu-item').forEach(i => i.classList.remove('active'));
+    });
 
+
+    // Add entrance animation for icons
+    anime({
+        targets: '.icon',
+        scale: [0, 1],
+        opacity: [0, 1],
+        delay: anime.stagger(100),
+        easing: 'easeOutElastic(1, .5)',
+        duration: 800
+    });
 });
+
